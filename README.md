@@ -2,7 +2,12 @@
 
 Welcome to **Pawfect Shelter**, a modern, responsive pet adoption web application where users can explore adoptable pets, take a quick matchmaking quiz, and register/login using Firebase Authentication.
 
+
+<img width="1920" height="1200" alt="Screenshot (281)" src="https://github.com/user-attachments/assets/5b551c7d-14fb-4b1f-91b8-e8a216cdd9e8" />
 ---
+<img width="1920" height="1200" alt="Screenshot (192)" src="https://github.com/user-attachments/assets/c887b580-92fd-4fd9-80e6-d917c6a15eb1" />
+<img width="1920" height="1200" alt="Screenshot (194)" src="https://github.com/user-attachments/assets/fc733d6f-6337-4b8a-85c8-c371becd12cb" />
+<img width="1920" height="1200" alt="Screenshot (195)" src="https://github.com/user-attachments/assets/aef68bc2-d4c9-475c-bf5d-412dc45fe70c" />
 
 ## 💡 Features
 
