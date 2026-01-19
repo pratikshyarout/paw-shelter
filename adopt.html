@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Adopt a Dog - Pawfect Shelter</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Ubuntu">
+ 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="CSS/styles.css">
+  <style>
+    .modal-img {
+      width: 100%;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  
+  <!-- Quiz Modal -->
+  <div class="modal fade" id="quizModal" tabindex="-1" aria-labelledby="quizModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="quizModalLabel">🐾 Find Your Pawfect Pet! 🐶🐱</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="quizForm">
+            <!-- Question 1 -->
+            <div class="quiz-question" id="question1">
+              <p><strong>1. What is your ideal pet size?</strong></p>
+              <input type="radio" name="size" value="small"> Small (e.g., Chihuahua, Corgi) <br>
+              <input type="radio" name="size" value="medium"> Medium (e.g. Border Collie, Cattle Dog ) <br>
+              <input type="radio" name="size" value="large"> Large (e.g., Golden Retriever, Great Dane) <br>
+            </div>
+  
+            <!-- Question 2 -->
+            <div class="quiz-question" id="question2" style="display: none;">
+              <p><strong>2. How active is your lifestyle?</strong></p>
+              <input type="radio" name="activity" value="low"> Low (Prefer a calm companion) <br>
+              <input type="radio" name="activity" value="medium"> Medium (Daily walks) <br>
+              <input type="radio" name="activity" value="high"> High (Love outdoor adventures) <br>
+            </div>
+  
+            <!-- Question 3 -->
+            <div class="quiz-question" id="question3" style="display: none;">
+              <p><strong>3. Do you have space for a pet?</strong></p>
+              <input type="radio" name="space" value="small"> Small Apartment <br>
+              <input type="radio" name="space" value="medium"> Medium House <br>
+              <input type="radio" name="space" value="large"> Large Yard <br>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" id="prevBtn" style="display: none;">Previous</button>
+          <button type="button" class="btn btn-primary" id="nextBtn">Next</button>
+          <button type="button" class="btn btn-success" id="submitBtn" style="display: none;">Find My Match</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Auto-trigger the quiz modal on page load -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var quizModal = new bootstrap.Modal(document.getElementById('quizModal'));
+      quizModal.show();
+    });
+    
+    function submitQuiz() {
+      alert("Thanks for taking the quiz!");
+      var quizModal = bootstrap.Modal.getInstance(document.getElementById('quizModal'));
+      quizModal.hide();
+    }
+  </script>
+  
+  <section id="title">
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">PAWFECT SHELTER</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link " href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link active" href="adopt.html">Adopt</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="login.html">Contact</a></li>
+          </ul>
+        </div>
+        <img src="images/run.gif" alt="Running Dog" class="running-dog">
+
+      </nav>
+    </div>
+  </section>
+  <section id="pricing">
+    <h2>Explore Our Services</h2>
+    <p>Choose from a variety of ways to support and engage with our shelter.</p>
+    <input type="text" id="searchInput" class="form-control" placeholder="Search by pet name..." onkeyup="searchPets()">
+    
+    <div class="row" id="petList">
+        <div class="pricing-column col-lg-4 col-md-6 pet-card">
+            <div class="card">
+                <div class="card-header"><h3>Labrador</h3></div>
+                <div class="card-body">
+                    <img src="images/goldenretriever.jpeg" class="img-fluid" alt="Golden Retriever">
+                    <h2>Pawfessional Sock Stealer</h2>
+                    <p class="pet-name">Duke </p>
+                    <button class="btn btn-lg btn-block btn-outline-dark">GO</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="pricing-column col-lg-4 col-md-6 pet-card">
+            <div class="card">
+                <div class="card-header"><h3>Mixed Breed</h3></div>
+                <div class="card-body">
+                    <img src="images/stan.jpg" class="img-fluid" alt="Golden Retriever">
+                    <h2>Knows Computer</h2>
+                    <p>Stan</p>
+                    <button class="btn btn-lg btn-block btn-dark">GO</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="pricing-column col-lg-4 col-md-6 pet-card">
+            <div class="card">
+                <div class="card-header"><h3>Labrador</h3></div>
+                <div class="card-body">
+                    <img src="images/maximus.jpeg" class="img-fluid" alt="Golden Retriever">
+                    <h2>Thinks he's a king</h2>
+                    <p>Maximus</p>
+                    <button class="btn btn-lg btn-block btn-dark">GO</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="pricing-column col-lg-4 col-md-6 pet-card">
+            <div class="card">
+                <div class="card-header"><h3>German Shepherd</h3></div>
+                <div class="card-body">
+                    <img src="images/khaleesi.jpg" class="img-fluid" alt="Golden Retriever">
+                    <h2>Cross Paw Lady</h2>
+                    <p>khaleesi</p>
+                    <button class="btn btn-lg btn-block btn-dark">GO</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="pricing-column col-lg-4 col-md-6 pet-card">
+            <div class="card">
+                <div class="card-header"><h3>Chihuahua</h3></div>
+                <div class="card-body">
+                    <img src="images/galaxy.jpeg" class="img-fluid" alt="Golden Retriever">
+                    <h2>Friendly</h2>
+                    <p>Princess</p>
+                    <button class="btn btn-lg btn-block btn-dark">GO</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="pricing-column col-lg-4 col-md-6 pet-card">
+            <div class="card">
+                <div class="card-header"><h3>Beagle</h3></div>
+                <div class="card-body">
+                    <img src="images/beagle.jpeg" class="img-fluid" alt="Golden Retriever">
+                    <h2>Singer</h2>
+                    <p>Mighty</p>
+                    <button class="btn btn-lg btn-block btn-dark">GO</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="pricing-column col-lg-4 col-md-6 pet-card">
+            <div class="card">
+                <div class="card-header"><h3>Brown Lab</h3></div>
+                <div class="card-body">
+                    <img src="images/bhalu.jpeg" class="img-fluid" alt="Golden Retriever">
+                    <h2>Loves puddles</h2>
+                    <p>Bhalu</p>
+                    <button class="btn btn-lg btn-block btn-dark">GO</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Service Cards (Will Not Be Filtered) -->
+        <div class="pricing-column col-lg-4 col-md-6">
+            <div class="card">
+                <div class="card-header"><h3>Dalmatian</h3></div>
+                <div class="card-body">
+                  <img src="images/chess.jpeg" class="img-fluid" alt="Golden Retriever">
+                  <h2>Loves Fashion</h2>
+                    <p>Cruella</p>
+                    <button class="btn btn-lg btn-block btn-dark">GO</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="pricing-column col-lg-4 col-md-6">
+            <div class="card">
+                <div class="card-header"><h3>Pet Supplies</h3></div>
+                <div class="card-body">
+                    <p>Get all essentials for your pet.</p>
+                    <button class="btn btn-lg btn-block btn-dark">GO</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="pricing-column col-lg-4 col-md-6">
+            <div class="card">
+                <div class="card-header"><h3>Rescue Missions</h3></div>
+                <div class="card-body">
+                    <p>Join our rescue operations.</p>
+                    <button class="btn btn-lg btn-block btn-dark">GO</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!--search filter-->
+<script>
+function searchPets() {
+    let input = document.getElementById("searchInput").value.toLowerCase(); // Get search value
+    let petCards = document.querySelectorAll(".pet-card"); // Get pet cards
+
+    petCards.forEach(card => {
+        let petName = card.querySelector(".card-header h3").innerText.toLowerCase(); // Get pet name
+
+        // Show or hide based on search
+        if (petName.includes(input)) {
+            card.style.display = "block"; 
+        } else {
+            card.style.display = "none"; 
+        }
+    });
+}
+</script>
+
+
+  <section id="cta" class="text-center">
+    <h3>Your new best friend is waiting. Adopt, don’t shop!</h3>
+    <button class="btn btn-lg btn-dark">Adopt Now</button>
+  </section>
+
+  <footer id="footer" class="text-center">
+    <p>© Copyright Pawfect Shelter</p>
+  </footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var quizQuestions = document.querySelectorAll(".quiz-question");
+      var currentQuestion = 0;
+  
+      var nextBtn = document.getElementById("nextBtn");
+      var prevBtn = document.getElementById("prevBtn");
+      var submitBtn = document.getElementById("submitBtn");
+  
+      function showQuestion(index) {
+        quizQuestions.forEach((q, i) => {
+          q.style.display = i === index ? "block" : "none";
+        });
+  
+        // Button visibility logic
+        prevBtn.style.display = index === 0 ? "none" : "inline-block";
+        nextBtn.style.display = index === quizQuestions.length - 1 ? "none" : "inline-block";
+        submitBtn.style.display = index === quizQuestions.length - 1 ? "inline-block" : "none";
+      }
+  
+      nextBtn.addEventListener("click", function() {
+        if (currentQuestion < quizQuestions.length - 1) {
+          currentQuestion++;
+          showQuestion(currentQuestion);
+        }
+      });
+  
+      prevBtn.addEventListener("click", function() {
+        if (currentQuestion > 0) {
+          currentQuestion--;
+          showQuestion(currentQuestion);
+        }
+      });
+  
+      // Initialize the first question
+      showQuestion(currentQuestion);
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var quizQuestions = document.querySelectorAll(".quiz-question");
+      var currentQuestion = 0;
+  
+      var nextBtn = document.getElementById("nextBtn");
+      var prevBtn = document.getElementById("prevBtn");
+      var submitBtn = document.getElementById("submitBtn");
+      var quizForm = document.getElementById("quizForm");
+  
+      function showQuestion(index) {
+        quizQuestions.forEach((q, i) => {
+          q.style.display = i === index ? "block" : "none";
+        });
+  
+        prevBtn.style.display = index === 0 ? "none" : "inline-block";
+        nextBtn.style.display = index === quizQuestions.length - 1 ? "none" : "inline-block";
+        submitBtn.style.display = index === quizQuestions.length - 1 ? "inline-block" : "none";
+      }
+  
+      nextBtn.addEventListener("click", function() {
+        if (currentQuestion < quizQuestions.length - 1) {
+          currentQuestion++;
+          showQuestion(currentQuestion);
+        }
+      });
+  
+      prevBtn.addEventListener("click", function() {
+        if (currentQuestion > 0) {
+          currentQuestion--;
+          showQuestion(currentQuestion);
+        }
+      });
+  
+      submitBtn.addEventListener("click", function() {
+        var size = document.querySelector('input[name="size"]:checked')?.value;
+        var activity = document.querySelector('input[name="activity"]:checked')?.value;
+        var space = document.querySelector('input[name="space"]:checked')?.value;
+  
+        if (!size || !activity || !space) {
+          alert("Please answer all questions!");
+          return;
+        }
+  
+        var petMatch = "A Loving Pet"; // Default
+        if (size === "small" && activity === "low" && space === "small") {
+          petMatch = "Beagle or Corgi or Frenchie";
+        } else if (size === "medium" && activity === "medium" && space !== "small") {
+          petMatch = "🐶 Labrador or 🐕 Husky";
+        } else if (size === "large" && activity === "high" && space === "large") {
+          petMatch = "🐕‍🦺 Border Collie or 🐕 Malinois or German Shepherd";
+        } else {
+          petMatch = "🐾 Mixed Breed or Exotic Pet or Shepherd";
+        }
+  
+        document.querySelector(".modal-body").innerHTML = `
+          <div class="text-center">
+            <h4>Your Perfect Match:</h4>
+            <h2>${petMatch}!</h2>
+            <p>Based on your preferences, this pet will suit your lifestyle best. 🏡</p>
+            <button class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+          </div>
+        `;
+        document.querySelector(".modal-footer").style.display = "none";
+      });
+  
+      showQuestion(currentQuestion);
+    });
+  </script>
+
+   <!-- Dog Detail Modal -->
+   <div class="modal fade" id="dogModal" tabindex="-1" aria-labelledby="dogModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="dogModalLabel">Dog Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6">
+              <img id="dogImage" class="modal-img" src="" alt="Dog Image">
+            </div>
+            <div class="col-md-6">
+              <h4 id="dogName">Dog Name</h4>
+              <p><strong>Breed:</strong> <span id="dogBreed">Breed</span></p>
+              <p id="dogDescription">Description</p>
+              <button class="btn btn-lg btn-dark" data-bs-toggle="modal" data-bs-target="#adoptModal">Adopt Now</button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const dogs = {
+      Duke: {
+        name: "Duke",
+        breed: "Labrador",
+        image: "images/goldenretriever.jpeg",
+        description: "Pawfessional Sock Stealer. Super friendly and playful."
+      },
+      Stan: {
+        name: "Stan",
+        breed: "Mixed Breed",
+        image: "images/stan.jpg",
+        description: "Knows computers. Geeky and cuddly."
+      },
+      Maximus: {
+        name: "Maximus",
+        breed: "Labrador",
+        image: "images/maximus.jpeg",
+        description: "Thinks he's a king. Loyal and strong."
+      },
+      khaleesi: {
+        name: "Khaleesi",
+        breed: "German Shepherd",
+        image: "images/khaleesi.jpg",
+        description: "Cross Paw Lady. Brave and majestic."
+      },
+      Princess: {
+        name: "Princess",
+        breed: "Chihuahua",
+        image: "images/galaxy.jpeg",
+        description: "Friendly and alert. Great lap dog."
+      },
+      Mighty: {
+        name: "Mighty",
+        breed: "Beagle",
+        image: "images/beagle.jpeg",
+        description: "Sometimes sings. Energetic and smart."
+      },
+      Bhalu: {
+        name: "Bhalu",
+        breed: "Brown Lab",
+        image: "images/bhalu.jpeg",
+        description: "Loves puddles. Gentle and cheerful."
+      },
+      Cruella: {
+        name: "Cruella",
+        breed: "Dalmatian",
+        image: "images/chess.jpeg",
+        description: "Loves fashion. Stylish and affectionate."
+      }
+    };
+
+    document.querySelectorAll(".btn.btn-lg").forEach(button => {
+      button.addEventListener("click", () => {
+        const name = button.parentElement.querySelector("p").innerText.trim();
+        const dog = dogs[name];
+        if (dog) {
+          document.getElementById("dogName").innerText = dog.name;
+          document.getElementById("dogBreed").innerText = dog.breed;
+          document.getElementById("dogImage").src = dog.image;
+          document.getElementById("dogDescription").innerText = dog.description;
+
+          const modal = new bootstrap.Modal(document.getElementById("dogModal"));
+          modal.show();
+        }
+      });
+    });
+  </script>
+
+
+
+  <!--- TEmporary backend -->
+
+  <!-- Adopt Now Modal -->
+<div class="modal fade" id="adoptModal" tabindex="-1" aria-labelledby="adoptModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form id="adoptForm">
+        <div class="modal-header">
+          <h5 class="modal-title" id="adoptModalLabel">🐶 Ready to Adopt?</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="adopterName" class="form-label">Your Name</label>
+            <input type="text" class="form-control" id="adopterName" required>
+          </div>
+          <div class="mb-3">
+            <label for="adopterEmail" class="form-label">Email Address</label>
+            <input type="email" class="form-control" id="adopterEmail" required>
+          </div>
+          <div class="mb-3">
+            <label for="adopterMessage" class="form-label">Why do you want to adopt?</label>
+            <textarea class="form-control" id="adopterMessage" rows="3" required></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-success">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<script>
+  document.getElementById("adoptForm").addEventListener("submit", function(e) {
+    e.preventDefault(); // Prevent form from refreshing page
+
+    // Get user input
+    const name = document.getElementById("adopterName").value;
+    const email = document.getElementById("adopterEmail").value;
+
+    // Hide modal
+    const adoptModal = bootstrap.Modal.getInstance(document.getElementById('adoptModal'));
+    adoptModal.hide();
+
+    // Show confirmation
+    setTimeout(() => {
+      alert(`🎉 Thank you, ${name}! We'll contact you at ${email} about your adoption soon! 🐾`);
+    }, 500);
+    
+    // Optionally reset the form
+    e.target.reset();
+  });
+</script>
+
+  
+</body>
+</html>

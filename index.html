@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>PAWFECT SHELTER</title>
+  <!-- CSS only -->
+  <!---Google Fonts-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Ubuntu">
+  <!--Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap JS -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="CSS/styles.css">
+
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js"></script>
+
+</head>
+
+<body>
+
+  <!--Pop up-->
+  <!-- Modal -->
+<div class="modal fade" id="welcomeModal" tabindex="-1" aria-labelledby="welcomeModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="welcomeModalLabel">🐾 Welcome to Pawfect Shelter! 🐶</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        We are dedicated to finding loving homes for pets in need. Explore, adopt, or support our mission today!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Auto-trigger the modal on page load -->
+<!-- Bootstrap JS & Popper.js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Auto-trigger the modal on page load -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var welcomeModal = new bootstrap.Modal(document.getElementById('welcomeModal'));
+    welcomeModal.show();
+  });
+</script>
+
+
+
+  <!--Original Pawfect Code-->
+
+  <section id="title">
+
+    <!-- Nav Bar -->
+    <div class="container-fluid">
+
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">PAWFECT SHELTER</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active"  href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="adopt.html">Adopt</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+           
+             <li class="nav-item">
+              <a class="nav-link" href="login.html">Login</a>
+            </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- Title -->
+
+    <div class="row">
+      <div class="col-lg-6">
+      <h1>Swipe, match, and adopt—because every pup deserves a forever home!</h1>
+      <button type="button" class="btn btn-dark btn-lg"><img src="https://img.icons8.com/windows/32/null/mac-os.png"/>Download</button>
+      <button type="button" class="btn btn-outline-light btn-lg"><img src="https://img.icons8.com/external-those-icons-fill-those-icons/24/null/external-Playstore-social-media-those-icons-fill-those-icons.png"/>Download</button>
+    
+    </div>
+    <div class="col-lg-6">
+      <img  class="title-image" src="images/doggo.gif" alt="iphone-mockup">
+    </div>
+  </div>
+</div>
+  </section>
+
+
+  <!-- Features -->
+
+  <section id="features">
+    <div class="row">
+
+    <div class="feature-box col-lg-4"><img class="imgcs" src="https://img.icons8.com/bubbles/50/null/hearts.png"/><h3>Easy to use.</h3>
+      
+      <p>So easy to use, even your dog could do it.</p>
+    </div>
+
+    <div class="feature-box col-lg-4"><img class="imgc" src="https://img.icons8.com/ios-filled/50/null/goal--v1.png"/><h3>Elite Clientele</h3>
+      <p>We have all the dogs, the greatest dogs.</p>
+    </div>
+    
+    <div class="feature-box col-lg-4">
+     
+      <img class="imgc" src="https://img.icons8.com/external-tanah-basah-glyph-tanah-basah/48/null/external-approved-advertisement-tanah-basah-glyph-tanah-basah.png"/> <h3>Guaranteed to work.</h3>
+    <p>Every wag, purr, and cuddle starts with adoption. Find your match!</p>
+    </div>
+
+  </div>
+
+    
+
+    
+
+    
+
+  </section>
+
+
+  <!-- Testimonials -->
+
+  <section id="testimonial">
+    <div id="testimonial-carousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <h2>"The moment I saw Luna’s eyes, I knew she was meant to be part of my family. Best decision ever!"</h2>
+          <img class="testimonial-image" src="images/doggo.png" alt="Adopter with pet">
+          <em>Emma, California</em>
+        </div>
+  
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <h2>"I used to dream of belly rubs and treats—now, I get them every day! Thank you, Pawfect Shelter!"</h2>
+          <img class="testimonial-image" src="images/corgi.png" alt="Rescued dog happy">
+          <em>Buddy, Adopted in Texas</em>
+        </div>
+  
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+          <h2>"Volunteering here changed my life. Watching these animals find homes is the most rewarding experience!"</h2>
+          <img class="testimonial-image" src="images/vol.png" alt="Shelter volunteer with dog">
+          <em>Sarah, Shelter Volunteer</em>
+        </div>
+  
+        <!-- Slide 4 -->
+        <div class="carousel-item">
+          <h2>"We adopted Bella, and now our home is filled with endless love and tail wags!"</h2>
+          <img class="testimonial-image" src="images/lab.png" alt="Family with adopted pet">
+          <em>The Johnsons, New York</em>
+        </div>
+      </div>
+  
+      <!-- Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#testimonial-carousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#testimonial-carousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+  
+  <!-- Bootstrap 5.2 JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A6hHkCJoFJ6Z1KbbhUAABvUpr4rIr5FfRvHAnP19+GpKuPiDzWArMkm6hzp4YLsi" crossorigin="anonymous"></script>
+  
+
+  <!-- Press 
+
+  <section id="press">
+
+    
+
+
+    <img class="press-logo" src="images/TechCrunch.png" alt="tc-logo">
+    <img class="press-logo" src="images/tnw.png" alt="tnw-logo">
+    <img class="press-logo" src="images/bizinsider.png" alt="biz-insider-logo">
+    <img class="press-logo" src="images/mashable.png" alt="mashable-logo">
+
+  </section>
+-->
+
+  <!-- Pricing -->
+
+  <section id="pricing">
+
+    <h2>A Plan for Every Dog's Needs</h2>
+    <p>Simple and affordable price plans for your and your dog.</p>
+
+<div class="row">
+  <div class="pricing-column col-lg-4 colmd-6">
+    <div class="card">
+      <div class="card-header">
+        <h3>Donate</h3>
+      </div>
+      <div class="card-body">
+       
+    <h2>Donate Right now</h2>
+    <p>Donate your dog's toys, food and medical care</p>
+    <p>Every contribution makes a difference</p>
+    <p>Be a Lifesaver</p>
+    <button class="btn btn-lg btn-block btn-outline-dark"type="button">GO</button>
+      </div>
+    </div>
+  </div>   
+   
+<div class="pricing-column col-lg-4 col-md-6">
+  <div class="card">
+    <div class="card-header">
+      <h3>Volunteer</h3>
+    </div>
+    <div class="card-body">
+      <h2>Become a Volunteer</h2>
+  <p>Assist in their journey to a loving home</p>
+  <p>Walk dogs, Socialize cats, or Assist in events</p>
+  <p>Dedicated to saving and rehoming pets</p>
+  <button class="btn btn-lg btn-block btn-dark" type="button">GO</button>
+
+    </div>
+  </div>
+</div>
+    
+<div class="pricing-column col-lg-4">
+  <div class="card">
+    <div class="card-header">
+      <h3>Foster</h3>
+    </div>
+    <div class="card-body">
+      <h2>Become a Foster Parent</h2>
+  <p>Provide a Temporary Home</p>
+  <p>Short-Term, Big Impact</p>
+  <p>Support & Guidance Provided </p>
+ <!-- <p>Unlimited App Usage</p> -->
+  <button class="btn btn-lg btn-block btn-dark" type="button">GO</button>
+  
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+    
+
+
+    
+    
+
+    
+    
+
+  </section>
+
+
+  <!-- Call to Action -->
+
+  <section id="cta">
+
+    <h3 class="cta-heading">Your new best friend is waiting. Adopt, don’t shop!</h3>
+    <button class="btn btn-lg btn-dark"type="button"><img src="https://img.icons8.com/windows/32/null/mac-os.png"/>Download</button>
+    <button class="btn btn-lg btn-light"type="button"><img src="https://img.icons8.com/external-those-icons-fill-those-icons/24/null/external-Playstore-social-media-those-icons-fill-those-icons.png"/>Download</button>
+
+  </section>
+
+
+  <!-- Footer -->
+
+  <footer id="footer">
+
+    <p>© Copyright PawfectShelter</p>
+
+  </footer>
+<!-- Firebase Compatibility Version -->
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-analytics-compat.js"></script>
+
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyDBObPOAS5J8sFDGmhK2BMi_EPJiO0L_h4",
+    authDomain: "pawfect-shelter.firebaseapp.com",
+    projectId: "pawfect-shelter",
+    storageBucket: "pawfect-shelter.appspot.com",
+    messagingSenderId: "631861757956",
+    appId: "1:631861757956:web:22453eb3cfc223b1bc8d51",
+    measurementId: "G-5Q29XZP0QS"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
+<script src="./app.js"></script>
+</body>
+
+</html>
